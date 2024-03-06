@@ -143,7 +143,7 @@ const data = [
     return data.find((d) => d.id === id);
   }
 
-const book = getBook(2);
+const book = getBook(1);
 // const author = book.author;
 // const title = book.title;
 
@@ -151,4 +151,17 @@ const { title, author, genres} = book;
 //console.log(author, title, genres);
 
 const [primaryGenre, secondaryGenre, ...otherGenres] = genres;
-console.log(primaryGenre, secondaryGenre, otherGenres);
+//console.log(primaryGenre, secondaryGenre, otherGenres);
+
+const newGenres = [...genres, 'epic fantasy']
+newGenres
+
+const updateBook = {
+  ...book,
+  // Adding a new property
+  moviePubliccationDate: "2021-12-19",
+
+  // Overwriting an existing property
+  pages: 100
+};
+updateBook
