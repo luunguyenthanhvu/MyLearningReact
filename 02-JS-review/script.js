@@ -231,7 +231,19 @@
 // asynchronous javascript promisisve
 
 // fetch api
-fetch('https://jsonplaceholder.typicode.com/todos').then(res => res.json()).then(data=>console.log(data));
+// fetch('https://jsonplaceholder.typicode.com/todos').then(res => res.json()).then(data=>console.log(data));
 
 
-console.log("jonas");
+// console.log("jonas");
+
+async function getTodos() {
+  const res = await fetch('https://jsonplaceholder.typicode.com/todos');
+  const data = await res.json();
+  console.log(data);
+
+  return data;
+}
+
+const toDo = getTodos();
+console.log(toDo)
+console.log("vuluu")
