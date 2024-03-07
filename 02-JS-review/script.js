@@ -147,7 +147,7 @@ const book = getBook(1);
 // const author = book.author;
 // const title = book.title;
 
-const { title, author, genres} = book;
+const { title, genres,pages, publicationDate} = book;
 //console.log(author, title, genres);
 
 const [primaryGenre, secondaryGenre, ...otherGenres] = genres;
@@ -165,3 +165,45 @@ const updateBook = {
   pages: 100
 };
 updateBook
+
+const summary = `${title}, a ${pages}-page is a book`;
+summary;
+
+// function getYear(str) {
+//   return str.split("-")[0];
+// }
+
+const getYear = (str) => str.split("-")[0];
+
+console.log(getYear(publicationDate))
+
+// falsy : 0, '', null, undefined
+
+
+const books = getBooks();
+const x = [1, 2, 3, 4, 5].map((el) => el * 2);
+console.log(x)
+
+const titles = books.map((book) => book.title);
+titles
+
+const essentialData = books.map(book => ({
+  title: book.title,
+  author: book.author
+}));
+
+essentialData
+
+// filter arr
+const longBooks = books.filter((book) => book.pages > 500).filter((book) => book.hasMovieAdaptation);
+longBooks
+
+const adventureBooks = books.filter((books) => books.genres.includes("adventure")).map((book) => book.title);
+adventureBooks
+
+const pagesAllBook = books.reduce((acc, book) => acc + book.pages, 0);
+pagesAllBook
+
+const arr = [3, 7, 1, 9, 6];
+const sorted = arr.slice().sort((a, b) => a - b);
+sorted
